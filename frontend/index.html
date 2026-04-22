@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Fake News Detection System</div>
+        <div class="nav-links">
+            <a href="#" id="nav-analyze" class="active">Analyze</a>
+            <a href="#" id="nav-compare">Compare Models</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <section id="section-analyze" class="tab-content">
+            <h2>Analyze whether a news article is fake or real</h2>
+            
+            <div class="input-card">
+                <label>Paste News Article Below To Analyze:</label>
+                <textarea id="analyze-text" rows="5" placeholder="Paste news article text here..."></textarea>
+                
+                <div class="controls-row">
+                    <div class="select-wrapper">
+                        <label for="analyze-model">Select Machine Learning Model:</label>
+                        <select id="analyze-model">
+                            <option value="logistic_regression">Logistic Regression</option>
+                            <option value="decision_tree">Decision Tree</option>
+                            <option value="gradient_boost">Gradient Boost</option>
+                            <option value="random_forest">Random Forest</option>
+                        </select>
+                    </div>
+                    <button id="btn-analyze" class="primary-btn">Analyze Article</button>
+                </div>
+            </div>
+
+            <div id="analyze-result-box" class="result-card hidden">
+                <h3>Prediction Result</h3>
+                <div class="result-grid-single">
+                    <div class="label">Model Used:</div>
+                    <div class="value" id="res-model-name">-</div>
+                    
+                    <div class="label">Prediction:</div>
+                    <div class="value"><span id="res-prediction" class="pill">-</span></div>
+                    
+                    <div class="label">Confidence Score:</div>
+                    <div class="value" id="res-confidence">-</div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="section-compare" class="tab-content hidden">
+            <h2>Model Performance</h2>
+            
+            <div class="input-card">
+                <label>Paste News Article Below To Analyze:</label>
+                <textarea id="compare-text" rows="5" placeholder="Paste news article text here..."></textarea>
+                
+                <div class="controls-row right-align">
+                    <button id="btn-compare" class="primary-btn">Performance</button>
+                </div>
+            </div>
+
+            <div id="compare-result-box" class="result-card hidden">
+                <div class="table-header">
+                    <div class="col-model">Model</div>
+                    <div class="col-pred">Prediction</div>
+                    <div class="col-conf">Confidence Score</div>
+                </div>
+                <div id="compare-results-list">
+                    </div>
+            </div>
+        </section>
+
+        <div id="loading" class="hidden">Processing with Machine Learning...</div>
+        <div id="error-message" class="error hidden"></div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
