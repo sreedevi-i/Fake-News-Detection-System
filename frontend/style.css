@@ -125,7 +125,7 @@ select {
 
 .primary-btn:hover { background-color: #173d66; }
 
-/* Single Result (Analyze Tab) */
+/* Analyze With Single Model */
 .result-grid-single {
     display: grid;
     grid-template-columns: 150px 1fr;

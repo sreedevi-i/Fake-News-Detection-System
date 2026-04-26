@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navigation Elements
+    // Navigation
     const navAnalyze = document.getElementById('nav-analyze');
     const navCompare = document.getElementById('nav-compare');
     const secAnalyze = document.getElementById('section-analyze');
     const secCompare = document.getElementById('section-compare');
 
-    // Analyze Tab Elements
+    // Analyze Tab
     const textAnalyze = document.getElementById('analyze-text');
     const modelSelect = document.getElementById('analyze-model');
     const btnAnalyze = document.getElementById('btn-analyze');
     const resBoxAnalyze = document.getElementById('analyze-result-box');
     
-    // Compare Tab Elements
+    // Compare Tab
     const textCompare = document.getElementById('compare-text');
     const btnCompare = document.getElementById('btn-compare');
     const resBoxCompare = document.getElementById('compare-result-box');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const API_URL = 'http://127.0.0.1:5000/analyze';
 
-    // --- NAVIGATION LOGIC ---
+    // NAVIGATION LOGIC 
     navAnalyze.addEventListener('click', (e) => {
         e.preventDefault();
         navAnalyze.classList.add('active');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hideFeedback();
     });
 
-    // --- API CALL LOGIC ---
+    // API CALL LOGIC
     async function fetchPrediction(text, model) {
         if (!text) {
             showError("Please paste an article text before analyzing.");
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- TAB 1: SINGLE ANALYZE ---
+    //  ANALYZE SINGLE MODEL
     btnAnalyze.addEventListener('click', async () => {
         const results = await fetchPrediction(textAnalyze.value.trim(), modelSelect.value);
         if (results && results.length > 0) {
@@ -87,12 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- TAB 2: COMPARE ALL ---
+    // COMPARE ALL 
     btnCompare.addEventListener('click', async () => {
-        // Passing 'compare_all' forces the backend to run all 4 models
+        //  run all 4 models
         const results = await fetchPrediction(textCompare.value.trim(), 'compare_all');
         if (results) {
-            compareList.innerHTML = ''; // clear old results
+            compareList.innerHTML = ''; 
             
             results.forEach(res => {
                 const confPercent = (res.confidence * 100).toFixed(0);
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- UTILITIES ---
+    // UTILITIES
     function showError(msg) { errorMsg.textContent = msg; errorMsg.classList.remove('hidden'); }
     function hideFeedback() { 
         errorMsg.classList.add('hidden'); 

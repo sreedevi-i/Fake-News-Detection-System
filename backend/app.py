@@ -5,7 +5,7 @@ import re
 import os
 
 app = Flask(__name__)
-CORS(app) # Allows your frontend to talk to this backend
+CORS(app)
 
 # --- MODEL DIRECTORY CONFIG ---
 MODEL_DIR = 'models'
@@ -37,7 +37,6 @@ except FileNotFoundError as e:
 
 
 def clean_text(text):
-    """Matches the exact text cleaning from Phase 1"""
     text = text.lower()
     text = re.sub(r'\W', ' ', text)
     text = re.sub(r'\s+', ' ', text)
