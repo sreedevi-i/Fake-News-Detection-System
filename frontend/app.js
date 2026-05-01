@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const API_URL = 'http://127.0.0.1:5000/analyze';
 
-    // NAVIGATION LOGIC 
+    // NAV
     navAnalyze.addEventListener('click', (e) => {
         e.preventDefault();
         navAnalyze.classList.add('active');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hideFeedback();
     });
 
-    // API CALL LOGIC
+    // API logic and error handling
     async function fetchPrediction(text, model) {
         if (!text) {
             showError("Please paste an article text before analyzing.");
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    //  ANALYZE SINGLE MODEL
+    //  Analyze single model
     btnAnalyze.addEventListener('click', async () => {
         const results = await fetchPrediction(textAnalyze.value.trim(), modelSelect.value);
         if (results && results.length > 0) {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // COMPARE ALL 
+    // comparing all models
     btnCompare.addEventListener('click', async () => {
         //  run all 4 models
         const results = await fetchPrediction(textCompare.value.trim(), 'compare_all');
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // UTILITIES
+    // error handling and loading states
     function showError(msg) { errorMsg.textContent = msg; errorMsg.classList.remove('hidden'); }
     function hideFeedback() { 
         errorMsg.classList.add('hidden'); 

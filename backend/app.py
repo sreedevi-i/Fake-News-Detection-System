@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# --- MODEL DIRECTORY CONFIG ---
+# Models path
 MODEL_DIR = 'models'
 VECTORIZER_PATH = os.path.join(MODEL_DIR, 'tfidf_vectorizer.pkl')
 
@@ -21,7 +21,7 @@ models_dict = {
 loaded_models = {}
 vectorizer = None
 
-# --- ATTEMPT TO LOAD MODELS ---
+# Loading MODELS
 try:
     print("Loading ML models into memory...")
     vectorizer = joblib.load(VECTORIZER_PATH)
