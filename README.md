@@ -1,6 +1,6 @@
 # Fake-News-Detection-System
 ## Project Overview
-This repository contains the Phase 4 implementation of the Fake News Detection System for CSCE 5214 Group 18. The project transitions a machine learning pipeline into a functional web application. It uses a Client Server architecture to separate the user interface from the prediction engine. The system evaluates news articles using four machine learning models: Logistic Regression, Decision Tree, Gradient Boost, and Random Forest.
+This repository contains the Phase 4 implementation of the Fake News Detection System for CSCE 5214 Group 18. The project transitions a machine learning pipeline into a functional web application. It uses a Client Server architecture to separate the user interface from the prediction engine. The system evaluates news articles using four machine learning models: Logistic Regression, Decision Tree, Gradient Boost, and Random Forest. It is deployed at: https://fake-news-detection-system-kohl.vercel.app/
 
 ## Repository Structure
 The project uses a monolithic repository structure divided into three main workspaces.
