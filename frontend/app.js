@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loading = document.getElementById('loading');
     const errorMsg = document.getElementById('error-message');
 
-    const API_URL = 'http://127.0.0.1:5000/analyze';
+    const API_URL = 'https://fake-news-detection-system-ny8g.onrender.com/analyze';
 
     // NAV
     navAnalyze.addEventListener('click', (e) => {
