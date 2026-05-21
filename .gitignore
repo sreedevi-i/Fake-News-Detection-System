@@ -3,5 +3,3 @@ backend/venv/
 backend/__pycache__/
 .env
 
-# Ignore Machine Learning Models
-backend/models/*.pkl
