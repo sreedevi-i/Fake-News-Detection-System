@@ -44,8 +44,12 @@ The trend analysis component is isolated for developer use only.
 
 Navigate to the developer_tools folder.
 
+
 Ensure the True and Fake CSV datasets are located in this folder.
 
 Open the Phase 4 Developer Dashboard notebook using Jupyter.
 
 Run the code cell to generate the visualization comparing publication volume over time.
+
+## Example News Article To Test
+MOSCOW (Reuters) - Russiaâ€™s former ambassador to Washington, Sergei Kislyak, said on Saturday his conversations with former White House national security adviser Michael Flynn had been transparent and focused on matters of U.S.-Russia cooperation. Kislyak ended his tenure in Washington in July but remains a key figure in ongoing U.S. investigations into Moscowâ€™s alleged meddling in the 2016 presidential election. Flynn was forced to resign in February after it became known that he had failed to disclose the content of conversations he had with Kislyak and misled U.S. Vice-President Mike Pence about their meetings. â€œWe only spoke about the most simple things ... but the communication was completely correct, calm, absolutely transparent. In any case, there were no secrets on our side,â€ Kislyak said during a panel discussion on Russian television. â€œThere are a number of issues which are important for cooperation between Russia and the United States - most of all, terrorism. And that was one of the things we discussed.
